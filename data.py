@@ -44,7 +44,7 @@ CULTURAL_DATA = {
             "videos": [
                 {
                     "title": "MS Subbulakshmi Concert",
-                    "url": "https://example.com/carnatic/ms",
+                    "url": "/classicalmusic",
                     "type": "performance"
                 }
             ],
