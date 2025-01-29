@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharatanatyam - Classical Dance of India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --accent-color: #FFD700;
+            --bg-darker: #121212;
+            --text-light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-darker);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            margin: 0;
+            padding: 2rem 0;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.6));
+            z-index: -1;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            object-fit: cover;
+            filter: grayscale(10%) brightness(1);
+            transition: all 0.5s ease;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                         0 0 20px rgba(255, 107, 107, 0.4),
+                         0 0 40px rgba(255, 107, 107, 0.2);
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #FFD700, #FF6B6B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .video-container:hover {
+            transform: scale(1.02);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #FFD700);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <img src="/static/images/bharatanatyam.jpg" alt="Bharatanatyam Background" class="background-image">
+    
+    <div class="container">
+        <a href="/" class="back-button">← Back to Home</a>
+        
+        <h1 class="animate__animated animate__fadeIn">Bharatanatyam</h1>
+        
+        <div class="glass-card">
+            <div class="video-section">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/JWhA3ldZcyY?si=TfO-GnNVq973s-C6" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Shiv Shambo</h3>
+                    <p class="video-description">Experience the beauty of Bharatanatyam through this mesmerizing performance of Shiv Shambo.</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/ko5sKNuSLbs?si=hVmbGUvLSPGWA45j" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">EDM Tarangam</h3>
+                    <p class="video-description">Watch this unique fusion of Bharatanatyam and EDM music, showcasing the versatility of this classical dance form.</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/GBbcYtkqVKQ?si=lTGi77BRL-hyY94I" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Kathakali</h3>
+                    <p class="video-description">Discover the rich cultural heritage of India through this captivating performance of Kathakali, a classical dance-drama from Kerala.</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/T-pUR5T1RLo?si=cp86re2vgFIoSjKw" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Swalla Jathi</h3>
+                    <p class="video-description">Marvel at the intricate footwork and rhythmic patterns of Bharatanatyam in this stunning performance of Swalla Jathi.</p>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/uaUOPEYvQCc?si=KCMdolxX0YiufCeG" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="video-title">Tandav</h3>
+                    <p class="video-description">Witness the powerful and energetic performance of Tandav, a dance form that embodies the cosmic dance of Lord Shiva.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
