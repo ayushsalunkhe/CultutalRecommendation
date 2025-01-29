@@ -34,6 +34,10 @@ def kathak():
 def hyderabadibiryani():
     return render_template('hyderabadibiryani.html')
 
+@app.route('/classicalmusic')
+def classicalmusic():
+    return render_template('classicalmusic.html')
+
 @app.route('/api/recommend', methods=['POST'])
 def get_recommendations():
     try:
