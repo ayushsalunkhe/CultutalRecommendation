@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff00ff, #00ffff, #ffcc00);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: #f8f9fa;
+            text-align: center;
+            position: relative;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/800x600/?guitar,piano,drums') no-repeat center center;
+            background-size: contain;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom: 3px solid #ffcc00;
+        }
+        .search-container {
+            margin: 20px auto;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff00ff;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+        }
+        button:hover {
+            background-color: #cc00cc;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 1);
+        }
+        .options {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .options button {
+            background-color: #00ffff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+        .options button:hover {
+            background-color: #009999;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+        }
+        .recommendation-box {
+            margin: 40px auto;
+            width: 60%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 3px solid #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Find Your Perfect Song</h1>
+        <p>Get recommendations based on your mood, culture, or region</p>
+    </header>
+    
+    <main>
+        <div class="search-container">
+            <input type="text" placeholder="Search for a song...">
+            <button>Search</button>
+        </div>
+        
+        <div class="options">
+            <button class="mood">By Mood</button>
+            <button class="culture">By Culture</button>
+            <button class="region">By Region</button>
+        </div>
+    </main>
+    
+    <div class="recommendation-box">
+        <h2>Recommended Songs</h2>
+        <p>No recommendations yet. Start searching to get song suggestions!</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Song Recommender. All rights reserved.</p>
+    </footer>
+</body>
+</html>
